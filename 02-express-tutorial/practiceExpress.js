@@ -1,8 +1,10 @@
 const express = require('express')
 const app = express()
-const path = require('path')
+const middleware = require('./practice-middleware.js')
+
 
 app.use(express.static('./new-public'))
+app.use(middleware)
 
 app.get('/sample', (req, res) => {
   res.send('<h2>This is Working</h2>')
